@@ -91,10 +91,26 @@ ul {
 
 .row {
   margin-top: 25px;
+  display: flex;
+}
+.row .col-6 {
+  width: 50%;
 }
 
 .box_list {
+  margin: 0 5px;
   background-color: #ffffff;
+  border-radius: 25px;
+}
+.box_list .title {
+  padding: 25px;
+}
+.box_list ul {
+  padding: 0 25px;
+}
+.box_list ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #F3F4F6;
 }
 .box_item {
   display: flex;

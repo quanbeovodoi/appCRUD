@@ -39,13 +39,26 @@ ul{
 
 .row{
     margin-top: 25px;
+    display: flex;
+    .col-6{
+        width: 50% ;
+    }
 }
 
 .box{
     &_list{
+        margin: 0 5px;
         background-color: $white-color;
+        border-radius: 25px;
         .title{
-            
+            padding: 25px;
+        }
+        ul{
+            padding: 0 25px;
+            li{
+                padding: 10px 0;
+                border-bottom: 1px solid $gray-100;
+            }
         }
     }
     &_item{
