@@ -20,14 +20,38 @@ ul{
 }
 .wrapper{
     width: 100%;
-    padding-left: 240px;
+    padding-left: 235px;
+    @include lg{
+        padding-left: 240px;
+    }
+    @include sm{
+        padding-left: 50px ;
+    }
+}
+.wp_open{
+    padding-left: 50px ;
+}
+.ml-5{
+    margin-left: 5px;
+    @include md{
+        margin-left: 0;
+    }
+}
+.mr-5{
+    margin-right: 5px;
+    @include md{
+        margin-right: 0;
+    }
 }
 .end_page{
-    margin-top: 25px;
+    margin-top: 10px;
+    .footer{
+        border: 1px solid $gray-050;
+    }
 }
 .content_page{
     width: 90%;
-    margin: 90px auto;
+    margin: 90px auto 0;
 }
 .chart{
     width: 100%;
@@ -35,31 +59,205 @@ ul{
     padding: 35px;
     margin: 0 auto;
     border-radius: 25px;
+    border: 1px solid $gray-100;
 }
-
+.flex-row{
+    flex-direction: row;
+}
+.flex-col{
+    flex-direction: column;
+}
 .row{
-    margin-top: 25px;
+    margin-top: 10px;
     display: flex;
+    @include md{
+        flex-direction: column;
+    }
     .col-6{
         width: 50% ;
+        @include lg{
+            width: 100%;
+        }
+    }
+    .col-4{
+        width: 33.3%;
+        @include lg{
+            width: 50%;
+        }
+        @include md{
+            width: 100%;
+        }
+    }
+    .col-8{
+        @include md{
+            margin-top: 15px;
+        }
+        width: 66.6%;
+        @include lg{
+            width: 50%;
+        }
+        @include md{
+            width: 100%;
+        }
     }
 }
-
+.btn{
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &-event{
+        display: flex;
+        justify-content: space-between;
+        @include sm{
+            width: 100%;
+        }
+    }
+    &-green{
+        background-color: $green-300;
+        color: $green-600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        padding: 5px;
+    }
+    &-red{
+        background-color: $red-300;
+        color: $red-600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        padding: 5px;
+    }
+    &.primary{
+        background-color: $blue-500;
+        color: $white-color;
+        &:hover{
+            background-color: $blue-700;
+        }
+    }
+    &.transparent{
+        background-color: transparent;
+        color: $blue-500;
+        &:hover{
+            color: $white-color;
+            background-color: $blue-600;
+        }
+    }
+    &.secondary{
+        background-color: $green-500;
+        color: $white-color;
+        &:hover{
+            background-color: $green-300;
+            color: $green-600;
+        }
+    }
+}
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+    .nav_page{
+        button{
+            outline: none;
+            border: none;
+            background-color: transparent;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                background-color: $blue-100;
+            }
+        }
+    }
+    select{
+        border: none;
+        outline: none;
+    }
+}
+.ext{
+    padding: 0 25px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include sm{
+        flex-direction: column;
+    }
+    .search_bar{
+        display: flex;
+        border: 1px solid $gray-100;
+        @include sm{
+            width: 100%;
+        }
+        .icon-search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg{
+                transition: all 0.25s ease-in-out;
+                fill: $gray-500 !important;      
+            }
+            &:hover{
+                cursor: pointer;
+                svg{
+                    fill: $blue-600 !important;
+                }
+            }  
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            border: none;
+        }
+    }
+}
+.editTemplate{
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(156, 156, 156, 0.5);
+}
+.table_area{
+    @include lg{
+        overflow-y: scroll;
+    }
+}
 .box{
-    &_list{
-        margin: 0 5px;
+    &_list,&_edit{
+        width: 100%;
         background-color: $white-color;
         border-radius: 25px;
+        border: 1px solid $gray-100;
+        padding: 5px 0;
         .title{
-            padding: 25px;
+            padding: 15px 25px;
         }
         ul{
             padding: 0 25px;
             li{
                 padding: 10px 0;
                 border-bottom: 1px solid $gray-100;
+                &:last-child{
+                    border: none;
+                }
             }
         }
+    }
+    &_edit{
+       width: 50%;
+       @include lg{
+            width: 90%;
+       }
     }
     &_item{
         display: flex;
@@ -69,7 +267,7 @@ ul{
             
         }
         &-des{
-            padding-left: 15px;
+            padding-left: 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -78,8 +276,8 @@ ul{
             display: flex;
         }
         &-img{
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             overflow: hidden;
             img{
@@ -89,4 +287,136 @@ ul{
             }
         }
     }
+    &_table{
+        padding: 0 25px;
+        text-align: left;
+        table{
+            min-width: 860px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            tr{
+                &.bg-stone{
+                    background-color: $gray-100;
+                }
+                th,td{
+                    padding: 15px;
+                }
+                th{
+                    color: $gray-500;
+                    border-bottom: 1px solid $gray-200;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    &:first-child{
+                        border-top-left-radius: 10px;
+                    }
+                    &:last-child{
+                        border-top-right-radius: 10px;
+                    }
+                }
+                td{
+                    .icon{
+                        float: left;
+                        &.edit{
+                            cursor: pointer;
+                            fill: $blue-400;
+                            &:hover{
+                                fill: $blue-600;
+                            }
+                        }
+                        &.trash{
+                            cursor: pointer;
+                            fill: $red-400;
+                            &:hover{
+                                fill: $red-600;
+                            }
+                        }
+                    }
+                    &::after{
+                        clear: both;
+                    }
+                    &:first-child{
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                    }
+                    &:last-child{
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
+input,select{
+    padding: 5px;
+    border: none;
+    outline: none;
+    border: 1px solid $gray-200;
+}
+select{
+    &:hover{
+        cursor: pointer;
+    }
+}
+.input-area{
+    padding: 0 25px 15px;
+    table{
+        width: 100%;
+    }
+    input,select{
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .input-field{
+        position: relative;
+        margin: 5px;
+        label{
+            position: absolute;
+            padding: 2px;
+            top: -10px;
+            left: 10px;
+            background-color: $white-color;
+        }
+    }
+}
+.error{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            @include lg{
+                font-size: 30px;
+            }
+            @include sm{
+                font-size: 15px;
+            }
+        }
+        img{
+            width: 600px;
+            @include lg{
+                width: 500px;
+            }
+            @include sm{
+                width: 400px;
+            }
+        }
+        &_content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            span{
+                @include lg{
+                    font-size: 25px;
+                }
+                @include sm{
+                    font-size: 15px;
+                }
+            }
+        }
+    }

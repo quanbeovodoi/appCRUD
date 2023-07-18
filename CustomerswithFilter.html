@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App CRUD</title>
+    <link rel="stylesheet" href="./src/assets/styles/style.css" />
+  </head>
+  <body>
+    <div id="root">
+        <div id="edit_area"></div>
+      <div class="header text-base">
+        <div class="header_left">
+          <div class="header_icon font-bold text-3xl">CRUD</div>
+          <ul class="menu_bar">
+            <li>
+              <a class="header_link active" href="#">Dashboard</a>
+            </li>
+            <li>
+              <a class="header_link" href="#">Team</a>
+            </li>
+            <li>
+              <a class="header_link" href="#">Project</a>
+            </li>
+            <li>
+              <a class="header_link" href="#">Calendar</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header_right">
+          <a href="#" class="header_link">
+            <!-- <div class="icon">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z"
+                ></path>
+              </svg>
+            </div>
+            <span>Login/Register</span> -->
+            <div class="icon">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="avatar">
+              <img src="./src/assets/images/avatar.png" alt="" srcset="" />
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="container text-base">
+        <div class="sidebar">
+          <ul>
+            <li>
+              <a href="#" class="sidebar_link sidebar_header active">
+                <div class="icon">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                      d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm4.5 7.5a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25a.75.75 0 01.75-.75zm3.75-1.5a.75.75 0 00-1.5 0v4.5a.75.75 0 001.5 0V12zm2.25-3a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0V9.75A.75.75 0 0113.5 9zm3.75-1.5a.75.75 0 00-1.5 0v9a.75.75 0 001.5 0v-9z"
+                    ></path>
+                  </svg>
+                </div>
+                <span>Bảng điều khiển</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="sidebar_link">
+                <div class="icon">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875z"
+                    ></path>
+                    <path
+                      d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 001.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 001.897 1.384C6.809 12.164 9.315 12.75 12 12.75z"
+                    ></path>
+                    <path
+                      d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 15.914 9.315 16.5 12 16.5z"
+                    ></path>
+                    <path
+                      d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 19.664 9.315 20.25 12 20.25z"
+                    ></path>
+                  </svg>
+                </div>
+                <span>Danh sách sản phẩm</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar_link">
+                <div class="icon">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"
+                    ></path>
+                  </svg>
+                </div>
+                <span>Khách hàng</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="sidebar_link">
+                <div class="icon">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                      d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zM9.75 17.25a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-.75zm2.25-3a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zm3.75-1.5a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-5.25z"
+                    ></path>
+                    <path
+                      d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z"
+                    ></path>
+                  </svg>
+                </div>
+                <span>Đơn hàng</span>
+              </a>
+            </li>
+          </ul>
+          <div class="compact">Thu gọn</div>
+        </div>
+        <div class="wrapper">
+          <div class="content_page">
+            <div class="box_list">
+                <div class="title font-bold">
+                  <h2>Danh sách khách hàng</h2>
+                </div>
+                <div class="ext">
+                    <div class="search_bar">
+                        <input type="text" name="search" id="searchBar" placeholder="search....">
+                        <div class="icon-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="btn-event">
+                        <button class="btn primary text-base font-semibold">
+                            Thêm mới
+                        <button>
+                        <button class="btn transparent text-base font-semibold">
+                           Ẩn bộ lọc
+                        <button>
+                    </div>
+                </div>
+                <div class="filter" id="filter">
+                  <div class="input-area">
+                    <table>
+                        <tr>
+                            <td><div class="input-field"><input class="text-base" type="text" placeholder="Tên khách hàng"></div></td>
+                            <td>
+                                <div class="input-field">
+                                    <label for="customer_number" class="text-xs">SĐT</label>
+                                    <input class="text-base" type="text" name="customer_number" value="0387353986">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input-field">
+                                    <select class="text-base" name="" id="">
+                                        <option value="0">Quận/Huyện</option>
+                                        <option value="Quận 1">Quận 1</option>
+                                        <option value="Quận 2">Quận 2</option>
+                                        <option value="Quận 3">Quận 3</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                              <div class="input-field">
+                                  <label for="date" class="text-xs">Ngày sinh</label>
+                                  <input class="text-base" type="date" name="date" value="2023-02-09"/>
+                              </div>
+                          </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                <div class="box_table">
+                  <table>
+                    <thead>
+                      <tr class="bg-stone">
+                        <th>Họ và tên</th>
+                        <th>SĐT</th>
+                        <th>Ngày sinh</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>Chức năng</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="font-bold">Nguyễn Văn A</td>
+                        <td class="font-bold">0387353798</td>
+                        <td>03/07/1999</td>
+                        <td>Mỹ Đình, Hà Nội</td>
+                        <td>buitrung19993@gmail.com</td>
+                        <td>
+                            <div class="icon edit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M4 21a1 1 0 0 0 .24 0l4-1a1 1 0 0 0 .47-.26L21 7.41a2 2 0 0 0 0-2.82L19.42 3a2 2 0 0 0-2.83 0L4.3 15.29a1.06 1.06 0 0 0-.27.47l-1 4A1 1 0 0 0 3.76 21 1 1 0 0 0 4 21zM18 4.41 19.59 6 18 7.59 16.42 6zM5.91 16.51 15 7.41 16.59 9l-9.1 9.1-2.11.52z"></path></svg></div>
+                            <div class="icon trash"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></div>
+                        </td>
+                      </tr>
+                      <tr class="bg-stone">
+                        <td class="font-bold">Nguyễn Văn A</td>
+                        <td class="font-bold">0387353798</td>
+                        <td>03/07/1999</td>
+                        <td>Mỹ Đình, Hà Nội</td>
+                        <td>buitrung19993@gmail.com</td>
+                        <td>
+                            <div class="icon edit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M4 21a1 1 0 0 0 .24 0l4-1a1 1 0 0 0 .47-.26L21 7.41a2 2 0 0 0 0-2.82L19.42 3a2 2 0 0 0-2.83 0L4.3 15.29a1.06 1.06 0 0 0-.27.47l-1 4A1 1 0 0 0 3.76 21 1 1 0 0 0 4 21zM18 4.41 19.59 6 18 7.59 16.42 6zM5.91 16.51 15 7.41 16.59 9l-9.1 9.1-2.11.52z"></path></svg></div>
+                            <div class="icon trash"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></div>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <div class="pagination">
+                    <p>Số bản ghi</p>
+                    <div class="filter">
+                        <select name="" id="filter">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="infoPageCurrent">
+                        1-10 of 20
+                    </div>
+                    <div class="nav_page">
+                        <button class="prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+                        </button>
+                        <button class="next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="end_page">
+            <div class="footer">
+              <div class="footer_left">
+                <p>© 2022 VnSolution. All rights reserved.</p>
+              </div>
+              <div class="footer_right">
+                <div class="icon">
+                  <img
+                    src="./src/assets/images/facebook-circle-solid.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="icon">
+                  <img
+                    src="./src/assets/images/twitter_2111738.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="icon">
+                  <img
+                    src="./src/assets/images/icons8-github-30.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module/text" src="./src/assets/js/index.js"></script>
+  </body>
+</html>

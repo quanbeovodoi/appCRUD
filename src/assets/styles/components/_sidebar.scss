@@ -1,13 +1,17 @@
 .sidebar{
-    bottom: 0;
     min-width: 260px;
     position: fixed;
-    border: 1px solid $gray-100;
+    border-right: 1px solid $gray-100;
+    padding-top: 45px;
     display: flex;
-    height: 93vh;
+    height: 100%;
     justify-content: space-between;
     flex-direction: column;
     background-color: $white-color;
+    @include sm{
+        min-width: unset;
+    }
+    
     // box-shadow: 0px 0px 15px 5px $gray-100;
     .icon{
         width: 35px;
@@ -20,6 +24,14 @@
         display: flex;
         justify-content: left;
         align-items: center;
+        span{
+            @include sm{
+                display: none;
+            }
+        }
+        &.active{
+            color: $blue-600;
+        }
         &:hover{
             color: $blue-600;
         }
@@ -27,9 +39,6 @@
     &_header{
         border-bottom: 1px solid $gray-200;
         padding: 40px 10px 15px;
-        &.active{
-            color: $blue-600;
-        }
     }
     .compact{
         width: 100%;
@@ -40,10 +49,20 @@
         background-color: $blue-800;
         color:$blue-100;
         transition: all 0.3s ease-in-out;
+        @include sm{
+            display: none;
+        }
         &:hover{
             cursor: pointer;
             background-color: $blue-500;
             color: $blue-200;
         }
+    }
+}
+
+.sb_small{
+    min-width: unset;
+    span{
+        display: none;
     }
 }
