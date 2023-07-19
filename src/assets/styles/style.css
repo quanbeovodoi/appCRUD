@@ -293,9 +293,6 @@ ul {
 .pagination .nav_page button:hover {
   background-color: #111827;
 }
-.pagination .nav_page button:hover svg {
-  fill: #ffffff;
-}
 .pagination select {
   border: none;
   outline: none;

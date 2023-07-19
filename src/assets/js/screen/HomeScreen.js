@@ -8,7 +8,7 @@ const HomeScreen = {
         <div class="row">
           <div class="col-4 mr-5">
             <div class="box_list">
-              <div class="title font-bold">Khách hàng thân thiết</div>
+              <div class="title font-bold text-xl">Khách hàng thân thiết</div>
               <ul>
                 <li>
                   <div class="box_item">
@@ -159,7 +159,7 @@ const HomeScreen = {
           </div>
           <div class="col-8 ml-5">
             <div class="box_list">
-              <div class="title font-bold">Sản phẩm bán chạy</div>
+              <div class="title font-bold text-xl">Sản phẩm bán chạy</div>
               <ul>
                 <li>
                   <div class="box_item">
@@ -258,7 +258,7 @@ const HomeScreen = {
         <div class="row">
           <div class="box_list">
             <div class="title font-bold">
-              <p>Đơn hàng gần nhất</p>
+              <h2 class="text-xl">Đơn hàng gần nhất</h2>
               <span class="sub_title font-light text-sm">Danh sách 6 đơn hàng gần nhất</span>
             </div>
             <div class="box_table">

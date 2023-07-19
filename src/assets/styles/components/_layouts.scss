@@ -196,9 +196,6 @@ ul{
             cursor: pointer;
             &:hover{
                 background-color: $gray-900;
-                svg{
-                    fill: $white-color;
-                }
             }
         }
     }
