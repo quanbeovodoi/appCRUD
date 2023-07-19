@@ -29,7 +29,10 @@ ul{
     }
 }
 .wp_open{
-    padding-left: 50px ;
+    padding-left: 80px ;
+    @include sm{
+        padding-left: 50px;
+    }
 }
 .ml-5{
     margin-left: 5px;
@@ -143,10 +146,6 @@ ul{
     &.transparent{
         background-color: transparent;
         color: $blue-500;
-        &:hover{
-            color: $white-color;
-            background-color: $blue-600;
-        }
     }
     &.secondary{
         background-color: $green-500;
@@ -239,11 +238,15 @@ ul{
         border-radius: 25px;
         border: 1px solid $gray-100;
         padding: 5px 0;
+        font-size: 0.9rem;
         .title{
             padding: 15px 25px;
         }
         ul{
             padding: 0 25px;
+            @include sm{
+                padding: 0 10px;
+            }
             li{
                 padding: 10px 0;
                 border-bottom: 1px solid $gray-100;

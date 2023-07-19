@@ -202,9 +202,11 @@ const ProductScreen = {
                     </tr>
                 </table>
             </div>`
+            document.getElementById("filter_product").innerHTML = 'Ẩn bộ lọc';
             filterBool = false;
         }else{
             document.getElementById("filter").innerHTML = '';
+            document.getElementById("filter_product").innerHTML = 'Bộ lọc';
             filterBool = true;
         }
     })

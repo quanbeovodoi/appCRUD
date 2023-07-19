@@ -197,9 +197,11 @@ const CustomerScreen = {
                         </tr>
                     </table>
                 </div>`
+                document.getElementById("filter_customer").innerHTML = 'Ẩn bộ lọc';
                 filterBool = false;
             }else{
                 document.getElementById("filter").innerHTML = '';
+                document.getElementById("filter_customer").innerHTML = 'Bộ lọc';
                 filterBool = true;
             }
         })

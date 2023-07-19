@@ -100,14 +100,14 @@ const Sidebar = {
        compact.addEventListener('click',()=>{
             if(sidebarElement.classList.contains('sb_small'))
             {
-                compact.innerHTML = "Thu gọn"
+                compact.innerHTML = "Thu gọn";
                 sidebarElement.classList.remove('sb_small');
                 if(wrapper.classList.contains('wp_open'))
                 wrapper.classList.remove('wp_open');
             }
             else
             {
-                compact.innerHTML = "Mở rộng"
+                compact.innerHTML = "Mở rộng";
                 sidebarElement.classList.add('sb_small');
                 if(!wrapper.classList.contains('wp_open'))
                 wrapper.classList.add('wp_open');

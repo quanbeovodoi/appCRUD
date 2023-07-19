@@ -83,7 +83,12 @@ ul {
 }
 
 .wp_open {
-  padding-left: 50px;
+  padding-left: 80px;
+}
+@media screen and (max-width: 799px) {
+  .wp_open {
+    padding-left: 50px;
+  }
 }
 
 .ml-5 {
@@ -228,10 +233,6 @@ ul {
   background-color: transparent;
   color: #3F83F8;
 }
-.btn.transparent:hover {
-  color: #ffffff;
-  background-color: #1C64F2;
-}
 .btn.secondary {
   background-color: #0E9F6E;
   color: #ffffff;
@@ -328,12 +329,18 @@ ul {
   border-radius: 25px;
   border: 1px solid #F3F4F6;
   padding: 5px 0;
+  font-size: 0.9rem;
 }
 .box_list .title, .box_edit .title {
   padding: 15px 25px;
 }
 .box_list ul, .box_edit ul {
   padding: 0 25px;
+}
+@media screen and (max-width: 799px) {
+  .box_list ul, .box_edit ul {
+    padding: 0 10px;
+  }
 }
 .box_list ul li, .box_edit ul li {
   padding: 10px 0;
@@ -584,6 +591,10 @@ select:hover {
 }
 .sb_small span {
   display: none;
+}
+.sb_small .sidebar_link {
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
