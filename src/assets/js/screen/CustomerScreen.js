@@ -74,9 +74,9 @@ const CustomerScreen = {
                        <option value="10">10</option>
                    </select>
                </div>
-               <div class="infoPageCurrent">
+               <p class="infoPageCurrent">
                    1-10 of 20
-               </div>
+               </p>
                <div class="nav_page">
                    <button class="prev">
                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>

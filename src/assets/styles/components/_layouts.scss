@@ -160,8 +160,19 @@ ul{
     display: flex;
     justify-content: flex-end;
     padding: 25px;
+    p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .nav_page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         button{
+            display: flex;
+        justify-content: center;
+        align-items: center;
             outline: none;
             border: none;
             background-color: transparent;

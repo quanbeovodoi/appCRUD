@@ -346,6 +346,7 @@ const HomeScreen = {
         type: "line",
         data: Data,
         options: {
+          responsive: true,
           plugins: {
             subtitle: {
               display: true,

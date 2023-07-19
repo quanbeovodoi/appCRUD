@@ -247,7 +247,20 @@ ul {
   justify-content: flex-end;
   padding: 25px;
 }
+.pagination p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination .nav_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .pagination .nav_page button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   outline: none;
   border: none;
   background-color: transparent;
