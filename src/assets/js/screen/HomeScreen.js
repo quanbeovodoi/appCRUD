@@ -346,6 +346,20 @@ const HomeScreen = {
         type: "line",
         data: Data,
         options: {
+          animations: {
+            tension: {
+              duration: 1000,
+              easing: 'linear',
+              from: 0.5,
+              to: 0.5,
+              loop: true
+            }
+          },
+          interaction: {
+            mode: 'nearest',
+            intersect: false,
+            axis: 'x'
+          },
           responsive: true,
           plugins: {
             subtitle: {
