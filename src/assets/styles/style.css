@@ -133,8 +133,9 @@ ul {
 
 .chart {
   width: 100%;
+  min-height: 400px;
   background-color: #ffffff;
-  padding: 35px;
+  padding: 15px;
   margin: 0 auto;
   border-radius: 25px;
   border: 1px solid #F3F4F6;
@@ -211,6 +212,7 @@ ul {
 }
 @media screen and (max-width: 799px) {
   .btn-event {
+    margin-top: 15px;
     width: 100%;
   }
 }
@@ -289,7 +291,10 @@ ul {
   cursor: pointer;
 }
 .pagination .nav_page button:hover {
-  background-color: #E1EFFE;
+  background-color: #111827;
+}
+.pagination .nav_page button:hover svg {
+  fill: #ffffff;
 }
 .pagination select {
   border: none;
@@ -308,6 +313,7 @@ ul {
   }
 }
 .ext .search_bar {
+  width: 30%;
   display: flex;
   border: 1px solid #F3F4F6;
 }

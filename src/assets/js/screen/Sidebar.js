@@ -7,7 +7,7 @@ const Sidebar = {
         return `<div class="sidebar" id="sidebar">
         <ul>
           <li>
-            <a href="#" class="sidebar_link sidebar_header active">
+            <a href="#" class="sidebar_link sidebar_header ${(request.resource === '/' || request.resource === '')?'active':''}">
               <div class="icon">
                 <svg
                   fill="currentColor"

@@ -346,6 +346,8 @@ const HomeScreen = {
         type: "line",
         data: Data,
         options: {
+          maintainAspectRatio: false,
+          
           animations: {
             tension: {
               duration: 1000,
@@ -362,13 +364,16 @@ const HomeScreen = {
           },
           responsive: true,
           plugins: {
-            subtitle: {
+            title: {
               display: true,
               text: "Doanh thu",
               padding: {
                 top: 10,
                 bottom: 30,
               },
+              font:{
+                size: 30
+              }
             },
           },
         },

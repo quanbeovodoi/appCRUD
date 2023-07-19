@@ -58,8 +58,9 @@ ul{
 }
 .chart{
     width: 100%;
+    min-height: 400px;
     background-color: #ffffff;
-    padding: 35px;
+    padding: 15px;
     margin: 0 auto;
     border-radius: 25px;
     border: 1px solid $gray-100;
@@ -115,6 +116,7 @@ ul{
         display: flex;
         justify-content: space-between;
         @include sm{
+            margin-top: 15px;
             width: 100%;
         }
     }
@@ -193,7 +195,10 @@ ul{
             transition: all 0.2s ease-in-out;
             cursor: pointer;
             &:hover{
-                background-color: $blue-100;
+                background-color: $gray-900;
+                svg{
+                    fill: $white-color;
+                }
             }
         }
     }
@@ -211,6 +216,7 @@ ul{
         flex-direction: column;
     }
     .search_bar{
+        width: 30%;
         display: flex;
         border: 1px solid $gray-100;
         @include sm{
