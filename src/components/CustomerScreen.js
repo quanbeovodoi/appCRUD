@@ -1,9 +1,14 @@
-import allData from "../allData.js";
+import allData from "../stores/allData.js";
+import DefaultLayout from "./DefaultLayots.js";
+import Footer from "./Footer.js";
+import Header from "./Header.js";
 import Pagination from "./Pagination.js";
+import Sidebar from "./Sidebar.js";
 
-const customers = allData.customers;
+const customers = {content: allData.customers};
 const CustomerScreen = {
-    render: async ()=>{
+    render: async (newCutomers)=>{
+        if(!newCutomers) newCutomers = {content: allData.customers};
        return `
        <div class="content_page">
        <div class="box_list">
@@ -41,7 +46,7 @@ const CustomerScreen = {
                      </tr>
                    </thead>
                    <tbody>
-                   ${customers.map((item,index)=>{
+                   ${newCutomers.content.map((item,index)=>{
                     let bgColor = index%2 != 0?'bg-stone':''
                     return `<tr class=${bgColor}>
                     <td class="font-bold">${item.name}</td>
@@ -59,10 +64,26 @@ const CustomerScreen = {
                  </table>
              </div>
            </div>
-           ${await Pagination.render()}
+           ${await Pagination.render(customers)}
          </div>
      </div>`
     },after_render: ()=>{
+        const newCutomers = {content: allData.customers};
+    if(Pagination.after_render)
+        Pagination.after_render(newCutomers,async()=>{
+            const app = document.getElementById('root');
+            const contentRender = await CustomerScreen.render(newCutomers)
+            app.innerHTML = await DefaultLayout.render(contentRender);
+            if(CustomerScreen.after_render){
+                CustomerScreen.after_render();
+            }
+            if(Sidebar.after_render)
+            await Sidebar.after_render();
+            if(Header.after_render)
+            await Header.after_render();
+            if(Footer.after_render)
+            await Footer.after_render();
+        })
         const addItem = document.getElementById("add_customer");
         const filter = document.getElementById("filter_customer");
         let filterBool = true;

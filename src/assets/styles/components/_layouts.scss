@@ -173,6 +173,15 @@ ul{
     }
 }
 .pagination{
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+        @include xxs{
+            flex-direction: column;
+        }
+    }
     display: flex;
     justify-content: flex-end;
     padding: 25px;
@@ -191,11 +200,15 @@ ul{
             align-items: center;
             outline: none;
             border: none;
+            border-radius: 15px;
             background-color: transparent;
             transition: all 0.2s ease-in-out;
             cursor: pointer;
             &:hover{
-                background-color: $gray-900;
+                background-color: $blue-500;
+                svg{
+                    fill: $white-color;
+                }
             }
         }
     }

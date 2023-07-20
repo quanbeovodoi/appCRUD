@@ -270,6 +270,17 @@ ul {
   justify-content: flex-end;
   padding: 25px;
 }
+.pagination_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+@media screen and (max-width: 380px) {
+  .pagination_wrapper {
+    flex-direction: column;
+  }
+}
 .pagination p {
   display: flex;
   justify-content: center;
@@ -286,12 +297,16 @@ ul {
   align-items: center;
   outline: none;
   border: none;
+  border-radius: 15px;
   background-color: transparent;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 .pagination .nav_page button:hover {
-  background-color: #111827;
+  background-color: #3F83F8;
+}
+.pagination .nav_page button:hover svg {
+  fill: #ffffff;
 }
 .pagination select {
   border: none;

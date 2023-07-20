@@ -1,12 +1,13 @@
-import CustomerScreen from "./screen/CustomerScreen.js";
-import DefaultLayout from "./screen/DefaultLayots.js";
-import Error404Screen from "./screen/Error404Screen.js";
-import Footer from "./screen/Footer.js";
-import Header from "./screen/Header.js";
-import HomeScreen from "./screen/HomeScreen.js";
-import ProductScreen from "./screen/ProductScreen.js";
-import Sidebar from "./screen/Sidebar.js";
-import { parseRequestUrl } from "./utils.js";
+import CustomerScreen from "../components/CustomerScreen.js";
+import DefaultLayout from "../components/DefaultLayots.js";
+import Error404Screen from "../components/Error404Screen.js";
+import Footer from "../components/Footer.js";
+import Header from "../components/Header.js";
+import HomeScreen from "../components/HomeScreen.js";
+import Pagination from "../components/Pagination.js";
+import ProductScreen from "../components/ProductScreen.js";
+import Sidebar from "../components/Sidebar.js";
+import { parseRequestUrl } from "../utils/utils.js";
 const routes = {
   "/": HomeScreen,
   "/products": ProductScreen,
@@ -20,6 +21,7 @@ const router = async () => {
     (request.verb ? `/${request.verb}` : "");
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
   const app = document.getElementById('root');
+  Pagination.reset()
   const contentRender = await screen.render()
   app.innerHTML = await DefaultLayout.render(contentRender);
   if(Sidebar.after_render)

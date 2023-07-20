@@ -1,11 +1,15 @@
-import allData from "../allData.js";
+import allData from "../stores/allData.js";
+import DefaultLayout from "./DefaultLayots.js";
+import Footer from "./Footer.js";
+import Header from "./Header.js";
 import Pagination from "./Pagination.js";
-
+import Sidebar from "./Sidebar.js";
+const products = {content: allData.products};
 const ProductScreen = {
-  render: async () => {
-    const products = allData.products;
+  render: async (newProducts) => {
+    if(!newProducts) newProducts = {content: allData.products};
     return `
-    <div class="content_page">
+        <div class="content_page">
             <div class="box_list">
                 <div class="title font-bold">
                   <h2>Danh sách sản phẩm</h2>
@@ -43,7 +47,7 @@ const ProductScreen = {
                           </tr>
                         </thead>
                         <tbody>
-                          ${products.map(
+                          ${newProducts.content.map(
                             (item,index)=>{
                                 let bgColor = index%2 != 0?'bg-stone':''
                                 return `<tr class = ${bgColor}>
@@ -64,11 +68,29 @@ const ProductScreen = {
                       </table>
                   </div>
                 </div>
-                ${await Pagination.render()}
+                ${
+                    await Pagination.render(products)
+                }
               </div>
           </div>
         `;
   },after_render: ()=>{
+    const newProducts = {content: allData.products};
+    if(Pagination.after_render)
+        Pagination.after_render(newProducts,async()=>{
+            const app = document.getElementById('root');
+            const contentRender = await ProductScreen.render(newProducts)
+            app.innerHTML = await DefaultLayout.render(contentRender);
+            if(ProductScreen.after_render){
+                ProductScreen.after_render();
+            }
+            if(Sidebar.after_render)
+            await Sidebar.after_render();
+            if(Header.after_render)
+            await Header.after_render();
+            if(Footer.after_render)
+            await Footer.after_render();
+        })
     const addItem = document.getElementById("add_product");
     const filter = document.getElementById("filter_product");
     let filterBool = true;

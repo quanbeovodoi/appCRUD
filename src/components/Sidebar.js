@@ -1,4 +1,4 @@
-import { parseRequestUrl } from "../utils.js";
+import { parseRequestUrl } from "../utils/utils.js";
 
 
 const Sidebar = {
